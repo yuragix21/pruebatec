@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Adicional
+Quiza antes de iniciar el servidor le pida que ejecute npm i para instalar algunas cosas
+Si no solicita nada el servidor iniciara sin problemas
