@@ -12,6 +12,7 @@ export class BuscadorComponent  implements OnInit{
   searchQuery!: string;
   notFound = false;
   limit = 8;
+  
 
   constructor(private service: GiphyService) {}
 

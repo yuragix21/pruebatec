@@ -61,3 +61,17 @@ button{
     font-size: 20px;
     color: white;
   }
+
+
+  /* MEDIA QUERYS */
+
+@media (max-width: 600px){
+  input{
+    width: 70%; 
+  }
+
+  .grid-container{
+    display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  }
+}

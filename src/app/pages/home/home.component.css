@@ -16,3 +16,10 @@
     background-color: white;
     height: 100vh;
 }
+
+
+@media (max-width: 600px){
+   .header{
+    height: 310vh;
+   }
+}
