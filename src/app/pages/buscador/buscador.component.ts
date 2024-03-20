@@ -6,31 +6,39 @@ import { GiphyService } from 'src/app/services/giphy.service';
   templateUrl: './buscador.component.html',
   styleUrls: ['./buscador.component.css']
 })
-export class BuscadorComponent  implements OnInit{
+export class BuscadorComponent implements OnInit {
 
   gifs: any;
-  searchQuery!: string;
+  searchQuery: string = '';
   notFound = false;
   limit = 8;
-  
+  searchHistory: string[] = [];
 
-  constructor(private service: GiphyService) {}
+  constructor(private service: GiphyService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   searchGifs() {
-    this.service.searchGifs(this.searchQuery)
-      .subscribe(results => {
-        this.gifs = results.data.slice(0, this.limit);
-        console.log(this.gifs);
-      }, error => {
-        console.error('Error al buscar gifs:', error);
-        this.notFound = true;
-      });
-    this.searchQuery = '';
+    if (this.searchQuery.trim() !== '') {
+      const searchTerm = this.searchQuery.trim(); 
+      this.service.searchGifs(searchTerm)
+        .subscribe(results => {
+          this.gifs = results.data.slice(0, this.limit);
+          this.addToHistory(searchTerm);
+        }, error => {
+          console.error('Error al buscar gifs:', error);
+          this.notFound = true;
+        });
+      this.searchQuery = ''; 
+    }
   }
 
-
-  
-
+  addToHistory(term: string) {
+    if (!this.searchHistory.includes(term)) {
+      this.searchHistory.unshift(term);
+      if (this.searchHistory.length > 5) {
+        this.searchHistory.pop();
+      }
+    }
+  }
 }
