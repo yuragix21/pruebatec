@@ -1,0 +1,21 @@
+<p>Buscar:</p>
+<input type="text" [(ngModel)]="searchQuery" placeholder="Buscar gifs...">
+<button (click)="searchGifs()">Buscar</button>
+
+<div class="grid-container">
+    <div class="card-body" *ngFor="let gif of gifs">
+      <div class="imagen">
+        <img [src]="gif.images.original.url" alt="">
+      </div>
+      <div class="nombre">
+        {{ gif.title }}
+      </div>
+    </div>
+  </div>
+
+<!-- *ngFor="let gif of gifs" -->
+
+<!-- {{gif.title}} -->
+
+
+

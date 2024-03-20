@@ -1,0 +1,19 @@
+.gifs-apps{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.serie1{
+    width: 90%;
+    height: 5vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 10px;
+}

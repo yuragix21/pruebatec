@@ -1,0 +1,18 @@
+
+
+.main{
+    display: flex;
+    flex: row;
+}
+
+.header{
+    flex: 0 0 20%;
+    background-color: hsla(0, 4%, 11%, 0.87);
+    height: 100vh;
+}
+
+.buscador{
+    flex: 0 0 80%;
+    background-color: white;
+    height: 100vh;
+}
